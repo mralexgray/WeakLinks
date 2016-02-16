@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+extern int MyWeakLinkedFunction() __attribute__((weak_import));
+
 int main(int argc, const char * argv[]) {
 	@autoreleasepool {
-	    // insert code here...
-	    NSLog(@"Hello, World!");
+
+    if (MyWeakLinkedFunction != NULL)
+        return MyWeakLinkedFunction();
 	}
     return 0;
 }
+
