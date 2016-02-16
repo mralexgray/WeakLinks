@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B44A8E81C73032F002DBE0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B44A8E71C73032F002DBE0A /* main.m */; };
+		7B44A8E81C73032F002DBE0A /* WeakLinks.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B44A8E71C73032F002DBE0A /* WeakLinks.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		7B44A8E41C73032F002DBE0A /* WeakLinks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WeakLinks; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B44A8E71C73032F002DBE0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B44A8E71C73032F002DBE0A /* WeakLinks.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WeakLinks.mm; path = WeakLinks/WeakLinks.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 		7B44A8DB1C73032F002DBE0A = {
 			isa = PBXGroup;
 			children = (
-				7B44A8E61C73032F002DBE0A /* WeakLinks */,
+				7B44A8E71C73032F002DBE0A /* WeakLinks.mm */,
 				7B44A8E51C73032F002DBE0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,14 +52,6 @@
 				7B44A8E41C73032F002DBE0A /* WeakLinks */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		7B44A8E61C73032F002DBE0A /* WeakLinks */ = {
-			isa = PBXGroup;
-			children = (
-				7B44A8E71C73032F002DBE0A /* main.m */,
-			);
-			path = WeakLinks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +110,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B44A8E81C73032F002DBE0A /* main.m in Sources */,
+				7B44A8E81C73032F002DBE0A /* WeakLinks.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +199,10 @@
 		7B44A8EC1C73032F002DBE0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,6 +210,10 @@
 		7B44A8ED1C73032F002DBE0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
